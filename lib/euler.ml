@@ -123,13 +123,20 @@ let lcm m n = m * n / (gcd m n)
 
 
 let perm n l =
-  let len = fact_aux (List.length l) n in
-  let remove x = List.filter (fun y -> y <> x) in
-  let rec perm m xs ret =
-    if m = 0 then ret 
-    else List.map (fun x -> perm (pred m) (remove x xs) (x::ret)) xs
+  let remove x xs =
+    let rec remove ret = function
+      | [] -> ret
+      | y::ys when y = x -> remove ret ys
+      | y::ys -> remove (y::ret) ys
+    in
+    remove [] xs
   in
-  perm n l []
+  let rec perm m xs a b =
+    if m = 0 then a::b
+    else
+      List.fold_right (fun x y -> perm (m-1) (remove x xs) (x::a) y) xs b
+  in
+  perm n l [] []
 ;;  
   
 

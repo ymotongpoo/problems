@@ -67,10 +67,10 @@ val lcm : int -> int -> int
   (** [Euler.lcm m n] calculates least common multiple.
       lcm uses gcd's result using gcd(a,b) x lcm(a,b) = axb *)
 
-val perm : int -> 'a list -> 'a list array
+val perm : int -> 'a list -> 'a list list
   (** [Euler.perm n l] generates nth permutation from l *)
 
-val comb : int -> 'a list -> 'a list array
+(* val comb : int -> 'a list -> 'a list array *)
   (** [Euler.comb n l] generates nth combination from l *)
 
 (***********************************************************
