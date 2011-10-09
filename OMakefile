@@ -1,0 +1,47 @@
+.PHONY: all install clean
+
+########################################################################
+# Subdirectories.
+# You may want to include some subdirectories in this project.
+# If so, define the subdirectory targets and uncomment this section.
+#
+
+# traverse the subdirs except $(dirs)
+Subdirs_except(dirs) =
+ #println(PWD: $(shell pwd))
+
+ # need to export since .SUBDIRS is evaluated in the global scope
+ export VISIT_SUBDIRS
+
+ sub_omakefiles = $(glob i, */OMakefile)
+ subdirs = $(sub_omakefiles.map $(dirname))
+
+ VISIT_SUBDIRS=$(set-diff $(subdirs), $(dirs))
+
+ # The rule
+ .SUBDIRS: $(VISIT_SUBDIRS)
+
+# traverse all the subdirs
+Subdirs() =
+ Subdirs_except($(array))
+
+Subdirs()
+
+# project dirs
+
+LIB = $(dir lib)
+TEST = $(dir test)
+
+#
+# Various options
+#
+OCAMLFLAGS    += -warn-error x
+# OCAMLCFLAGS   +=
+# OCAMLOPTFLAGS += -inline 10
+# OCAML_LINK_FLAGS +=
+# OCAML_BYTE_LINK_FLAGS +=
+# OCAML_NATIVE_LINK_FLAGS +=
+NATIVE_ENABLED = true
+BYTE_ENABLED = false
+USE_OCAMLFIND = true
+

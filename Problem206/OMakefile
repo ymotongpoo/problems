@@ -1,0 +1,16 @@
+FILES[] =
+   problem206
+
+PROGRAM = problem206
+OCAMLINCLUDES += $(LIB)
+OCAML_LIBS[] += 
+	$(LIB)/eular
+# OCAML_CLIBS +=
+OCAML_OTHER_LIBS += nums
+# OCAML_LIB_FLAGS +=
+OCAMLFLAGS += -warn-error x
+
+.DEFAULT: $(OCamlProgram $(PROGRAM), $(FILES))
+
+clean:
+  rm -f $(filter-proper-targets $(ls R, .))

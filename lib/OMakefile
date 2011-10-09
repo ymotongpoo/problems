@@ -1,0 +1,13 @@
+FILES[] =
+    euler
+    bintree
+
+LIB=euler
+
+OCAML_OTHER_LIBS+=nums
+
+.DEFAULT: $(OCamlLibrary $(LIB), $(FILES))
+
+clean:
+  rm -f $(filter-proper-targets $(ls R, .))
+

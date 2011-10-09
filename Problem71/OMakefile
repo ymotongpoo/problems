@@ -1,0 +1,14 @@
+.PHONY: clean
+
+FILES[] =
+  problem71
+
+OCAMLINCLUDES += $(LIB)
+OCAML_LIBS[] += $(LIB)/eular
+
+PROGRAM = problem71
+
+.DEFAULT : $(OCamlProgram $(PROGRAM), $(FILES))
+
+clean : 
+  rm -f $(filter-proper-targets $(ls R, .))

@@ -1,0 +1,14 @@
+FILES[] =
+   problem89
+
+PROGRAM = problem89
+OCAMLINCLUDES += ../lib
+OCAML_LIBS += ../lib/eular
+# OCAML_CLIBS +=
+# OCAML_OTHER_LIBS += nums
+# OCAML_LIB_FLAGS +=
+
+.DEFAULT: $(OCamlProgram $(PROGRAM), $(FILES))
+
+clean:
+  rm -f $(filter-proper-targets $(ls R, .))

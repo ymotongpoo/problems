@@ -1,0 +1,17 @@
+*~
+*.a
+*.o
+*.omc
+*.cmi
+*.cmo
+*.spot
+*.spit
+*.annot
+*.orig
+*.lock
+*.run
+*.opt
+.omakedb
+.DS_Store
+
+
