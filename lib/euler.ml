@@ -12,6 +12,10 @@ let (/~) = Big_int.div_big_int
 
 type 'a bintree = LF | Bt of 'a * 'a bintree * 'a bintree
 
+(*********************************************************** 
+ ***************************************** Basic operation 
+ ***********************************************************)
+
 let pow x n = 
   let rec pow_aux accu = function
     | 0 -> accu
@@ -21,7 +25,6 @@ let pow x n =
   | 1 -> x
   | 2 -> x*x
   | _ -> pow_aux 1 n
-;;
 
 
 let fact_aux n m =
@@ -37,6 +40,10 @@ let fact n = fact_aux n n
 let sqrt n = int_of_float (sqrt (float_of_int n))
 
 
+(**
+ * Basic list operations 
+ **)
+
 let rec_map f l = List.rev (List.rev_map f l)
 
 
@@ -51,7 +58,6 @@ let max l =
   | [x] -> x
   | x::xs -> max_aux x xs
   | [] -> failwith("Eular.max")
-;;
 
 
 let min l =
@@ -65,7 +71,6 @@ let min l =
   | [x] -> x
   | x::xs -> min_aux x xs
   | [] -> failwith("Eular.min")
-;;
 
 
 let rec bottom = function
@@ -83,6 +88,10 @@ let range s l =
   in
   range_aux [] s l
 
+
+(***********************************************************
+ ******************************** Basic algebric functions 
+ ***********************************************************)
 
 let sift n l = List.filter (fun x -> x mod n <> 0) l
 
@@ -115,8 +124,12 @@ let lcm m n = m * n / (gcd m n)
 
 let perm n l =
   let len = fact_aux (List.length l) n in
+  let remove x = List.filter (fun y -> y <> x) in
   let rec perm m xs ret =
-    if m = 0 then ret else ret
+    if m = 0 then ret 
+    else List.map (fun x -> perm (pred m) (remove x xs) (x::ret)) xs
+  in
+  perm n l []
 ;;  
   
 

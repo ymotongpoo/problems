@@ -11,6 +11,8 @@
 *.lock
 *.run
 *.opt
+*.cmx
+*.cmxa
 .omakedb
 .DS_Store
 
