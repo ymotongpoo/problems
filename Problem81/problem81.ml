@@ -26,6 +26,11 @@ module A : sig
     (** [load_matrix filename] returns multidimensional array whose
         elsements are stored in [filename] *)
 
+  val solver : int array array -> int
+    (** [solver matrix] returns minimal cost *)
+
+  val solve_dijkstra : (int, int) Hashtbl.t -> int
+
   val test : unit -> unit
 
 end = struct
@@ -79,6 +84,21 @@ end = struct
         matrix
   ;;
 
+  (* solve_dijkstra : (int, int) Hashtbl.t -> int *)
+  let solve_dijkstra init = 0;;
+
+  let solver matrix =
+    let max_row = Array.length matrix in
+    let max_col = Array.length matrix.(0) in
+    let init = [] in
+    let nodes = 
+      Array.iteri (fun r x -> 
+        Array.iteri (fun c y -> ((r, c), (false, -1))::init x) matrix
+    in
+    solve_dijkstra table
+  ;;
+
+  
   let test () = 
     let _ = load_matrix filename in
     ()
