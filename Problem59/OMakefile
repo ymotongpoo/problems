@@ -1,8 +1,8 @@
 FILES[] =
    problem59
 
-OCAMLINCLUDES += $(LIB)
-OCAML_LIBS[] += $(LIB)/eular
+# OCAMLINCLUDES += 
+# OCAML_LIBS[] += 
 # OCAML_CLIBS +=
 OCAML_OTHER_LIBS += str
 # OCAML_LIB_FLAGS += 
