@@ -92,11 +92,13 @@ module A = struct
   ;;
 
   let is_funny ps ds =
+    (**
     let rec funny c = function
       | [] -> false
       | p::ps when c mod p = 0 -> true 
       | p::ps -> if c < p then false else funny c ps
     in
+     *)
     let rec is_funny ps ds =
       match ps, ds with
       | [], _ | _, [] -> true
