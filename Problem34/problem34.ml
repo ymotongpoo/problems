@@ -49,7 +49,7 @@ module A = struct
     begin
       Printf.printf "%d\n" limit;
       let result = find_fun_numbers limit in
-      List.map (fun x -> Printf.printf "%d " x) result;
+      let _ = List.map (fun x -> Printf.printf "%d " x) result in
       Printf.printf "\n";
       Printf.printf "%d\n" (List.fold_left (+) 0 result);
       ();

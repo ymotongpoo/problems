@@ -55,12 +55,12 @@ module A = struct
 
   let test () = 
     begin
-      List.map (fun x -> Printf.printf "%d " x) (decimal2binary 8);
+      let _ = List.map (fun x -> Printf.printf "%d " x) (decimal2binary 8) in
       Printf.printf "\n";
-      List.map (fun x -> Printf.printf "%d " x) (decimal2binary 15);
+      let _ = List.map (fun x -> Printf.printf "%d " x) (decimal2binary 15) in
       Printf.printf "\n";
       let palindromics = find_palindromic limit in
-      List.map (fun x -> Printf.printf "%d " x) palindromics;
+      let _ = List.map (fun x -> Printf.printf "%d " x) palindromics in
       Printf.printf "\n";
       Printf.printf "%d\n" (List.fold_left (+) 0 palindromics);
       ();

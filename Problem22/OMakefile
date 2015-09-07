@@ -4,7 +4,7 @@ FILES[] =
 PROGRAM = problem22
 # OCAML_LIBS += 
 # OCAML_CLIBS +=
-OCAML_OTHER_LIBS += nums
+OCAML_OTHER_LIBS += str nums
 # OCAML_LIB_FLAGS +=
 
 .DEFAULT: $(OCamlProgram $(PROGRAM), $(FILES))

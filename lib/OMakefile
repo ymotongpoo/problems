@@ -3,8 +3,7 @@ FILES[] =
     bintree
 
 LIB=euler
-
-OCAML_OTHER_LIBS+=nums
+OCAML_OTHER_LIBS += nums
 
 .DEFAULT: $(OCamlLibrary $(LIB), $(FILES))
 

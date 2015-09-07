@@ -64,7 +64,7 @@ module A = struct
   ;;
   
   let print_tuple (l, r) = Printf.printf "(%d, %d) " l r ;;
-  
+
   let test () = 
     begin
       let _ = List.map (fun x -> print_tuple x) result in

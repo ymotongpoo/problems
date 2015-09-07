@@ -3,6 +3,7 @@
  *
  * created by Yoshifumi YAMAGUCHI, 2010
  ***************************************************************)
+open Big_int;;
 
 let ( *~ ) = Big_int.mult_big_int
 let ( $~ ) = Big_int.mult_int_big_int
@@ -57,7 +58,7 @@ let max l =
   match l with
   | [x] -> x
   | x::xs -> max_aux x xs
-  | [] -> failwith("Eular.max")
+  | [] -> failwith("Euler.max")
 
 
 let min l =
@@ -70,11 +71,11 @@ let min l =
   match l with
   | [x] -> x
   | x::xs -> min_aux x xs
-  | [] -> failwith("Eular.min")
+  | [] -> failwith("Euler.min")
 
 
 let rec bottom = function
-  | [] -> invalid_arg "Eular.bottom"
+  | [] -> invalid_arg "Euler.bottom"
   | x::[] -> x
   | x::xs -> bottom xs
 
@@ -82,7 +83,7 @@ let rec bottom = function
 let range s l =
   let rec range_aux accu s' n =
     match n with
-    | n' when n' < 0 -> invalid_arg "Eular.range_aux"
+    | n' when n' < 0 -> invalid_arg "Euler.range_aux"
     | 0 -> List.rev accu
     | n' -> range_aux (s'::accu) (succ s') (pred n')
   in

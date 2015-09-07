@@ -47,10 +47,11 @@ module B = struct
     let rec takeN ret n l =
       match n, l with
       | 0, _ -> List.rev ret
+      | n, [] -> []
       | n, x::xs -> takeN (x::ret) (n-1) xs
     in
     begin
-      List.map (fun n -> Printf.printf "%d " n) (takeN [] 20 primes);
+      let _ = List.map (fun n -> Printf.printf "%d " n) (takeN [] 20 primes) in
       Printf.printf "\n";
       Printf.printf "length of prime list is %d\n" (List.length primes);
       Printf.printf "largest one is %d\n" (List.hd (List.rev primes));

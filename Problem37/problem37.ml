@@ -92,7 +92,7 @@ module A = struct
       let source = over_ten ps in
       let result = find_trancatables ps source in
       Printf.printf "%d\n" (List.length source);
-      List.map (fun x -> Printf.printf "%d " x) result;
+      let _ = List.map (fun x -> Printf.printf "%d " x) result in
       Printf.printf "\n";
       Printf.printf "%d\n" (List.fold_left (+) 0 result);
       ();

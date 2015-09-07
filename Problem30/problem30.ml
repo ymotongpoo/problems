@@ -38,7 +38,7 @@ module A = struct
 
   let test () = 
     begin
-      List.map (fun x -> Printf.printf "%d " x) (find_fun_numbers (pow 10 7) 5);
+      let _ = List.map (fun x -> Printf.printf "%d " x) (find_fun_numbers (pow 10 7) 5) in
       Printf.printf "\n";
       Printf.printf "%d\n" (List.fold_left (+) 0 (find_fun_numbers (pow 10 7) 5));
       ();

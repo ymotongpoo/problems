@@ -1,12 +1,12 @@
 module A = struct
 
-  let max_edge = 1001;
-
+  let max_edge = 1001;;
+                 
   let e_in_edge = function
     | 0 -> 1
     | n -> 8*(n-1)
   ;;
-  
+
   let mergin_from_prev = function
     | 1 -> 0
     | n -> 2*(n-1)
@@ -44,7 +44,7 @@ module A = struct
       Printf.printf "%d\n" (sum_total depth);
     end
   ;;
-
+ 
 end
 
 let () = A.test ();;

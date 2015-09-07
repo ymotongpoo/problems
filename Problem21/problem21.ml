@@ -71,9 +71,9 @@ module A = struct
   let test () = 
     begin
       (* print_list (List.flatten (dividors (primes 1000) 220)); *)
-      print_list (find_amicable [] (numbers limit));
-      Printf.printf "\n";
-      Printf.printf "%d\n" (List.fold_left (+) 0 (find_amicable [] (numbers limit)));
+      let _ = print_list (find_amicable [] (numbers limit)) in
+      let _ = Printf.printf "\n" in
+      let _ = Printf.printf "%d\n" (List.fold_left (+) 0 (find_amicable [] (numbers limit))) in
       ();
     end
 

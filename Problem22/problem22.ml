@@ -8,7 +8,7 @@ module A = struct
     let ic = open_in filename in
     try
       let line = input_line ic in
-      split (regexp ",") line
+      Str.split (regexp ",") line
     with e ->
       close_in_noerr ic;
       raise e
@@ -39,7 +39,7 @@ module A = struct
       let names = List.sort compare 
         (List.map (fun x -> quoted x) (elements_in filename)) in
       let scores = calc_score names in
-      List.map (fun x -> Printf.printf "%s " x) names;
+      let _ = List.map (fun x -> Printf.printf "%s " x) names in
       Printf.printf "%d\n" (List.fold_left (+) 0 scores);
       ();
     end

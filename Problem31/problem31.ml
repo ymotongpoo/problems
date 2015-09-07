@@ -50,7 +50,7 @@ end = struct
   let rec create_tree coins = function      
     | Status(0, _) -> Empty
     | Status(r, c) as s -> 
-        let min = Eular.min [r; c] in
+        let min = Euler.min [r; c] in
         let candidates = List.filter (fun x -> x <= min) coins in
         let create_child x =
           let child = Status(r-x, x) in
@@ -58,8 +58,6 @@ end = struct
         in
         let children = List.map create_child candidates in
         Tree(s, children)
-    | Status(r, _) when r < 0 ->
-        failwith("create_tree : rest value in Status is negative\n")
   ;;
 
   let rec count_pattern = function
@@ -69,7 +67,7 @@ end = struct
   ;;
 
   let test () = 
-    let max = Eular.max coins + 1 in
+    let max = Euler.max coins + 1 in
     let start = Status(total, max) in
     let tree = create_tree coins start in
     Printf.printf "total patterns : %d%!\n" (count_pattern tree)

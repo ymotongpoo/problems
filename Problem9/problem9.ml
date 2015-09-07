@@ -21,8 +21,9 @@ module A = struct
   let test () =
     let result = find_trio 1000 in
     begin
-      List.map print_trio result;
-      List.map (fun n -> Printf.printf "%d " n) (List.map prod_of_trio result);
+      let _ = List.map print_trio result in
+      let prod_results = List.map prod_of_trio result in
+      let _ = List.map (fun n -> Printf.printf "%d\n" n) prod_results in
       ();
     end
 

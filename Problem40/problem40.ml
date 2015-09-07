@@ -33,7 +33,7 @@ module A = struct
         let frac_str = fraction (pow 10 depth) in
         List.map (fun x -> nth_num frac_str x) (bases depth)
       in
-      List.map (fun x -> Printf.printf "%d " x) digits;
+      let _ = List.map (fun x -> Printf.printf "%d " x) digits in
       Printf.printf "\n";
       Printf.printf "%d\n" (List.fold_left ( * ) 1 digits);
     end

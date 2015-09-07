@@ -72,9 +72,9 @@ module A = struct
 
   let test () =
     begin
-      List.map (fun x -> Printf.printf "%d " x) (circulate 12345);
+      let _ = List.map (fun x -> Printf.printf "%d " x) (circulate 12345) in
       Printf.printf "\n";
-      List.map (fun x -> Printf.printf "%d " x) (find_circ_prime (primes 1000));
+      let _ = List.map (fun x -> Printf.printf "%d " x) (find_circ_prime (primes 1000)) in
       Printf.printf "\n";
       Printf.printf "%d\n" (List.length (List.map (fun x -> Printf.printf "%d " x) (find_circ_prime (primes limit))) - 1);
       ();
