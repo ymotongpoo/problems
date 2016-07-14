@@ -92,8 +92,8 @@ end = struct
     let max_col = Array.length matrix.(0) in
     let init = [] in
     let nodes = 
-      Array.iteri (fun r x -> 
-        Array.iteri (fun c y -> ((r, c), (false, -1))::init x) matrix
+      Array.iteri (fun r x ->
+          Array.iteri (fun c y -> ((r, c), (false, -1))::init x) matrix)
     in
     solve_dijkstra table
   ;;

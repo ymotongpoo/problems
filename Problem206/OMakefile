@@ -4,7 +4,7 @@ FILES[] =
 PROGRAM = problem206
 OCAMLINCLUDES += $(LIB)
 OCAML_LIBS[] += 
-	$(LIB)/eular
+	$(LIB)/euler
 # OCAML_CLIBS +=
 OCAML_OTHER_LIBS += nums
 # OCAML_LIB_FLAGS +=

@@ -4,7 +4,7 @@ FILES[] =
   problem71
 
 OCAMLINCLUDES += $(LIB)
-OCAML_LIBS[] += $(LIB)/eular
+OCAML_LIBS[] += $(LIB)/euler
 
 PROGRAM = problem71
 
