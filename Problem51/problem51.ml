@@ -22,12 +22,18 @@ module A : sig
 
 end = struct
 
-  let primes = Eular.primes 1000000
+  let primes = Euler.primes 1000000;;
+                            
+  let rec find_smallest = function
+    | [] -> failwith "Empty"
+    | [x] -> x
+    | x::xs -> min x (find_smallest xs)
+  ;;
 
   let test () = 
     let () = Printf.printf "start calc\n" in
-    let _ = Eular.rec_map (fun x -> Printf.printf "%d%!\n" x) primes in
-    ()
+    (* let _ = Euler.rec_map (fun x -> Printf.printf "%d%!\n" x) primes in *)
+    Printf.printf "%d\n" (find_smallest primes)
   ;;
  
 end

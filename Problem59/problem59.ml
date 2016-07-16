@@ -29,7 +29,7 @@ module A : sig
 end = struct
 
   let test () =
-    let print_string "test"
+    print_string "test"
   ;;
   
 end

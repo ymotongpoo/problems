@@ -93,7 +93,7 @@ end = struct
     let init = [] in
     let nodes = 
       Array.iteri (fun r x ->
-          Array.iteri (fun c y -> ((r, c), (false, -1))::init x) matrix)
+                    Array.iteri (fun c y -> ((r, c), (false, -1)) x) matrix)
     in
     solve_dijkstra table
   ;;

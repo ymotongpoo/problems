@@ -40,10 +40,10 @@ module A = struct
       if lt_big_int s threshold then false 
       else
         let strs = string_of_big_int s in
-        let len = (String.length strs) / 2 in
-        let ret = String.create (len+1) in
+        let len = (Bytes.length strs) / 2 in
+        let ret = Bytes.create (len+1) in
         for i = 0 to len do
-          ret.[i] <- strs.[2*i]
+          Bytes.set ret i strs.[2*i]
         done;        
         if ret = pattern then true else false
     in

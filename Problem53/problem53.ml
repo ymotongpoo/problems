@@ -36,7 +36,7 @@ module A = struct
   let test () =
     begin
       let result = roller (bi 1000000) (bi 100) in
-      List.map (fun x -> Printf.printf "%s " (string_of_big_int x)) result;
+      let _ = List.map (fun x -> Printf.printf "%s " (string_of_big_int x)) result in
       Printf.printf "%d\n" (List.length result);
     end
   ;;

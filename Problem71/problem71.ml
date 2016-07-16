@@ -49,7 +49,7 @@ end = struct
   let target = fraction 3 7
 
   let find_coprimes_under num =
-    let is_coprime m n = if Eular.gcd m n = 1 then true else false in
+    let is_coprime m n = if Euler.gcd m n = 1 then true else false in
     let rec coprimes accu = function
       | n when n = num -> accu
       | n when is_coprime num n -> coprimes (n::accu) (n+1)
@@ -83,7 +83,7 @@ end = struct
           let candidates = List.filter (fun x -> fraction x d < target) coprimes in 
           if candidates = [] then find_rpf _n _d max (d+1)
           else 
-            let candidate = Eular.max candidates in
+            let candidate = Euler.max candidates in
             let cur_val = fraction candidate d in
             if cur_val > max then find_rpf candidate d cur_val (d+1)
             else find_rpf _n _d max (d+1)

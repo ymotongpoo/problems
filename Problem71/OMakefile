@@ -5,6 +5,7 @@ FILES[] =
 
 OCAMLINCLUDES += $(LIB)
 OCAML_LIBS[] += $(LIB)/euler
+OCAML_OTHER_LIBS += nums
 
 PROGRAM = problem71
 

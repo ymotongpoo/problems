@@ -20,10 +20,13 @@ module A = struct
   ;;
 
   let test () =
-    begin
-      let result = solver [] 1 1 in
-      Printf.printf "%d\n%i" (List.length result);
-    end
+    let _ = 
+      begin
+        let result = solver [] 1 1 in
+        Printf.printf "%d\n" (List.length result);
+      end
+    in
+    ()
   ;;
 
 end
