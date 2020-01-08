@@ -1,19 +1,21 @@
-*~
-*.a
-*.o
-*.omc
-*.cmi
-*.cmo
-*.spot
-*.spit
-*.annot
-*.orig
-*.lock
-*.run
-*.opt
-*.cmx
-*.cmxa
-.omakedb
 .DS_Store
 
+projecteuler.net/*~
+projecteuler.net/*.a
+projecteuler.net/*.o
+projecteuler.net/*.omc
+projecteuler.net/*.cmi
+projecteuler.net/*.cmo
+projecteuler.net/*.spot
+projecteuler.net/*.spit
+projecteuler.net/*.annot
+projecteuler.net/*.orig
+projecteuler.net/*.lock
+projecteuler.net/*.run
+projecteuler.net/*.opt
+projecteuler.net/*.cmx
+projecteuler.net/*.cmxa
+projecteuler.net/.omakedb
+
+leetcode/out
 
